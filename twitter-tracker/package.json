@@ -16,6 +16,7 @@
     "react-dom": "^17.0.1",
     "react-particles-js": "^3.4.1",
     "react-phone-number-input": "^3.1.6",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "reactstrap": "^8.7.1",
     "serve": "^11.3.2",
