@@ -7,11 +7,30 @@ import Particles from "react-particles-js";
 import PhoneInput from "react-phone-number-input";
 
 import { Container, Row, Col } from "reactstrap";
-
 import PlacesAutocomplete from "./PlacesAutocomplete";
+
+import {write} from "../firebase";
 
 const BackgroundVideo = () => {
   const [phoneNumber, setPhoneNumber] = useState();
+  const [longitude, setLongitude] = useState();
+  const [latitude, setLatitude] = useState();
+
+  function onSubmitInfo()
+  {
+      if(!longitude || !latitude || !phoneNumber)
+      {
+          alert("Please fill out all areas.");
+      }
+      else{
+          alert("Thank you for using Twext! You should now receive text notifications about events in your area.");
+
+          let ref = "user/" + phoneNumber;
+          let obj = {phoneNumber, longitude, latitude};
+          write(ref, obj);
+      }
+  }
+
   return (
     <div>
       <Particles
@@ -75,13 +94,13 @@ const BackgroundVideo = () => {
       />
       <div className="Content">
         <div className="SubContent">
-          <h1 className="tweet-title">Cool Hackthon Product Name</h1>
+          <h1 className="tweet-title">Twext</h1>
           <div className="information-box">
             <h1 className="info-box-words">PERSONAL INFORMATION</h1>
             <Container>
-              <Row>
+              <Row className="phone-num-row">
                 <Col>
-                  <h1>Phone Number</h1>
+                  <h1 className="label-info">Phone Number</h1>
                 </Col>
                 <Col>
                   <PhoneInput
@@ -93,12 +112,16 @@ const BackgroundVideo = () => {
                   />
                 </Col>
               </Row>
-              <Row>
+              <Row className="phone-num-row">
                 <Col>
-                  <h1>Location</h1>
+                  <h1 className="label-info">Location</h1>
+                  <button className="submit-button" onClick={onSubmitInfo}>Submit</button>
                 </Col>
                 <Col>
-                  <PlacesAutocomplete></PlacesAutocomplete>
+                  <PlacesAutocomplete
+                    setLongitude={setLongitude}
+                    setLatitude={setLatitude}
+                  ></PlacesAutocomplete>
                 </Col>
               </Row>
             </Container>
