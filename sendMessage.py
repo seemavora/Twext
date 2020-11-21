@@ -6,7 +6,7 @@ auth = tweepy.OAuthHandler(config.consumer_key, config.consumer_secret)
 api = tweepy.API(auth)
 
 
-def send_tweet_message(tweet):
+def sendMessage(tweet):
     account_sid = config.twilio_sid
     auth_token = config.twilio_auth_token
     client = Client(account_sid, auth_token)
@@ -19,18 +19,6 @@ def send_tweet_message(tweet):
         )
     return "Message sent with id{}".format(message.sid)
 
-def send_reg_message(message):
-    account_sid = config.twilio_sid
-    auth_token = config.twilio_auth_token
-    client = Client(account_sid, auth_token)
-
-    message = client.messages \
-        .create(
-            body=message,
-            from_=config.from_phone_number,
-            to=config.to_phone_number
-        )
-    return "Message sent with id{}".format(message.sid)
 
 
 # tweets = api.search('wildfire', count=10)

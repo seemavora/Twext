@@ -23,7 +23,7 @@ for x in range (numTweets):
   finalMessage = finalMessage + tweetText
 finalMessage = 'Here is what Twitter has to say: \n'+ finalMessage
 # print(finalMessage)
-send_reg_message(warning)
-send_tweet_message(finalMessage)
+sendMessage(warning)
+sendMessage(finalMessage)
 
 # print(warning)
