@@ -8,3 +8,6 @@ from_phone_number = '+XXXX'
 to_phone_number = '+XXXXXX'
 
 fireAPIKey = ''
+geoCodeAPIKey = ''
+
+#all keys are found in Discord Group

@@ -59,4 +59,4 @@ for a in datesList:
 resultList = [statusList[idx], namesList[idx], datesList[idx],
               distanceList[idx], percentContainedList[idx]]
 
-print(resultList)
+#print(resultList)
