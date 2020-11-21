@@ -1,4 +1,4 @@
-var firebase = require("firebase");
+import firebase from 'firebase';
 
 var firebaseConfig = {
   apiKey: "AIzaSyAezcoT2Dpgh6OO-Y0mRk4s952JIzp5Tns",
@@ -14,8 +14,5 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export function write(ref, obj) {
-  firebase
-    .database()
-    .ref(ref)
-    .set(obj);
+  firebase.database().ref(ref).set(obj);
 }
