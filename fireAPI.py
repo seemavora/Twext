@@ -4,12 +4,8 @@ import config
 from opencage.geocoder import OpenCageGeocode
 
 
-geocoder = OpenCageGeocode(config.geoCodeAPIKey)
-query = 'Reno, United States'
-results = geocoder.geocode(query)
-latitude = results[0]['geometry']['lat']
-longitude = results[0]['geometry']['lng']
-
+latitude = 37.842447
+longitude = -119.518259
 API_KEY = config.fireAPIKey
 radius = 100
 URL = "https://api.breezometer.com/fires/v1/current-conditions?lat={latitude}&lon={longitude}&radius={radius}&key={API_KEY}".format(
