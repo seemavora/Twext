@@ -9,9 +9,9 @@ def possibleResponses(input):
     response = None
     if input == 'options':
         response = 'Welcome to Twext! Type in a keyword for the information:\n ' + 'Wildfire: For wildfire updates near you \n' +'WildfireTweet: For recent tweets about the wildfire near you.\n'+'Events: For Events happening near you\n' +'Safety: For safety updates near you (missing person, tragic event, etc)\n'
-    elif input == 'Wildfire':
+    elif input == 'WildfireTweets':
         response = finalMessage
-    elif input == 'WildfireTweet':
+    elif input == 'WildfireUpdate':
         response = warning
     elif input == 'Events' or input == 'Safety':
         response = 'This feature is under construction'
