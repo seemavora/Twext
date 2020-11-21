@@ -62,4 +62,6 @@
 
 .phone-input .PhoneInputCountryIconImg {
     height: 30px !important;
+    margin: 10px;
+    margin-top: 20px;
 }

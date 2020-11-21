@@ -6,6 +6,10 @@ import Particles from "react-particles-js";
 
 import PhoneInput from "react-phone-number-input";
 
+import { Container, Row, Col } from "reactstrap";
+
+import PlacesAutocomplete from "./PlacesAutocomplete";
+
 const BackgroundVideo = () => {
   const [phoneNumber, setPhoneNumber] = useState();
   return (
@@ -74,13 +78,30 @@ const BackgroundVideo = () => {
           <h1 className="tweet-title">Cool Hackthon Product Name</h1>
           <div className="information-box">
             <h1 className="info-box-words">PERSONAL INFORMATION</h1>
-            <PhoneInput
-              placeholder="Enter phone number."
-              value={phoneNumber}
-              onChange={setPhoneNumber}
-              defaultCountry="US"
-              className="phone-input"
-            />
+            <Container>
+              <Row>
+                <Col>
+                  <h1>Phone Number</h1>
+                </Col>
+                <Col>
+                  <PhoneInput
+                    placeholder="Enter phone number."
+                    value={phoneNumber}
+                    onChange={setPhoneNumber}
+                    defaultCountry="US"
+                    className="phone-input"
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <h1>Location</h1>
+                </Col>
+                <Col>
+                  <PlacesAutocomplete></PlacesAutocomplete>
+                </Col>
+              </Row>
+            </Container>
           </div>
         </div>
       </div>
