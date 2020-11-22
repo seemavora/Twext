@@ -9,26 +9,23 @@ import PhoneInput from "react-phone-number-input";
 import { Container, Row, Col } from "reactstrap";
 import PlacesAutocomplete from "./PlacesAutocomplete";
 
-import {write} from "../firebase";
+import { write } from "../firebase";
 
 const BackgroundVideo = () => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [longitude, setLongitude] = useState();
   const [latitude, setLatitude] = useState();
 
-  function onSubmitInfo()
-  {
-      if(!longitude || !latitude || !phoneNumber)
-      {
-          alert("Please fill out all areas.");
-      }
-      else{
-          alert("Thank you for using Twext! You should now receive text notifications about events in your area.");
-
-          let ref = "user/" + phoneNumber;
-          let obj = {phoneNumber, longitude, latitude};
-          write(ref, obj);
-      }
+  function onSubmitInfo() {
+    if (!longitude || !latitude || !phoneNumber) {
+      alert("Please fill out all areas.");
+    }
+    else {
+      alert("Thank you for using Twext! You should now receive text notifications about events in your area.");
+      let ref = "users/" + phoneNumber;
+      let obj = { phoneNumber, longitude, latitude };
+      write(ref, obj);
+    }
   }
 
   return (

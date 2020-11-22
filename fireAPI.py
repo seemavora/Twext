@@ -2,13 +2,15 @@ import requests
 import json
 import config
 from opencage.geocoder import OpenCageGeocode
+from firebaseData import *
 
 
-geocoder = OpenCageGeocode(config.geoCodeAPIKey)
-query = 'Reno, United States'
-results = geocoder.geocode(query)
-latitude = results[0]['geometry']['lat']
-longitude = results[0]['geometry']['lng']
+latitude = 0
+longitude = 0
+a = getEntry()
+for item in a:
+    latitude = item['latitude']
+    longitude = item['longitude']
 
 API_KEY = config.fireAPIKey
 radius = 100
@@ -38,17 +40,21 @@ def listsManager():
             percentContainedList.append(
                 (fires[i]['details']['percent_contained']))
         i += 1
-    return statusList, namesList, datesList, distanceList, percentContainedList
+    recentdate = datesList[0]
+    idx = 0
+    for a in datesList:
+        if(a > recentdate):
+            recentdate = a
+            idx = datesList.index(a)
+    resultList = [statusList[idx], namesList[idx], datesList[idx],
+              distanceList[idx], percentContainedList[idx]]
+
+    return resultList
 
 
-listsManager()
+print(listsManager())
 
-recentdate = datesList[0]
-idx = 0
-for a in datesList:
-    if(a > recentdate):
-        recentdate = a
-        idx = datesList.index(a)
+
 
 # print(statusList)
 # print(namesList)
@@ -56,7 +62,5 @@ for a in datesList:
 # print(distanceList)
 # print(percentContainedList)
 
-resultList = [statusList[idx], namesList[idx], datesList[idx],
-              distanceList[idx], percentContainedList[idx]]
 
 #print(resultList)

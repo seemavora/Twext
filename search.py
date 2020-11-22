@@ -5,6 +5,7 @@ from sendMessage import *
 auth = tweepy.OAuthHandler(config.consumer_key, config.consumer_secret)
 api = tweepy.API(auth)
 
+
 def search(location):
   tweets = api.search(location, count = '23')
   default = 10
