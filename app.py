@@ -8,11 +8,11 @@ app = Flask(__name__)
 def possibleResponses(input):
     response = None
     if input == 'options':
-        response = 'Welcome to Twext! Type in a keyword for the information:\n ' + 'Wildfire: For wildfire updates near you \n' +'WildfireTweet: For recent tweets about the wildfire near you.\n'+'Events: For Events happening near you\n' +'Safety: For safety updates near you (missing person, tragic event, etc)\n'
+        response = 'Welcome to Twext! Type in a keyword for the information:\n ' + 'WildfireUpdate: For wildfire updates near you \n' +'WildfireTweets: For recent tweets about the wildfire near you.\n'+'Events: For Events happening near you\n' +'Safety: For safety updates near you (missing person, tragic event, etc)\n'
     elif input == 'WildfireTweets':
-        response = finalMessage
+        response = str(tweetMessage())
     elif input == 'WildfireUpdate':
-        response = warning
+        response = str(warningMessage())
     elif input == 'Events' or input == 'Safety':
         response = 'This feature is under construction'
     else:
