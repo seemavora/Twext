@@ -1,8 +1,10 @@
 from fireAPI import *
 from search import *
 from sendMessage import *
+from fireAPI import *
 
-location = 'Reno'
+resultList = listsManager()
+location = resultList[1] 
 if not resultList[4]:
   warning = ('Warning!! ' + (str(resultList[0])).upper() + ' wildfire named ' 
   + str(resultList[1]) + 'discovered around ' 
