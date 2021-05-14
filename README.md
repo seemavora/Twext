@@ -1,3 +1,6 @@
+##Project Demo
+https://youtu.be/BdzOdhu_89Q 
+
 ## Inspiration
 In 2020, California faced the worst fires in its history in the midst of a pandemic. During this stressful situation, reliable and quick information was hard to come by and the source many relied on was Twitter. Tweets made by the local fire departments and onsite witnesses were relayed to the public in a faster and more accurate manner in comparison to other sources. As a result of the overwhelming amount of information received through Twitter, users were also faced with the issue of sorting through the tweets they found most reliable, especially when the time was of the essence.
 
